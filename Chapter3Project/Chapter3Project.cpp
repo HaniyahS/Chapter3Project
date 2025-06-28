@@ -10,7 +10,7 @@ int main()
 	int num2 = std::rand();
 
 	//Printing out problem
-	std::cout << num1 << " + " << num2;
+	std::cout << num1 << " +" << num2;
 
 	//Requiring user to press enter before continuing
 	std:: cout << "\nPress \"Enter\" to see solution";
