@@ -2,29 +2,44 @@
 //
 
 #include <iostream>
-
+#include <cmath>
+#include <iomanip>
+using namespace std;
 int main()
 {
-    //Printing out prompt
-    std::cout << "A cookie recipe calls for the following ingredients: 1.5 cups of sugar, 1 cup of butter, 2.75 cups of flour \n";
-    std:: cout << "The recipe produces 48 cookies with this amount of ingredients.\n";
-    
-    //Declaring and assigning values to variables
-    double flour, butter, sugar, x, xflour, xbutter, xsugar;
-    flour = 2.75;
-    butter = 1;
-    sugar = 1.5;
+	//Declaring variables
+	double rate, compound, principal, interest, result, decimal;
 
-    //Asking user how many cookies they want to make and assigning input to value
-    std::cout << "How many cookies do you wish to bake? ";
-    std::cin >> x;
+	//Asking for values and assigning values to variables
+	cout << "Interest rate? ";
+	cin >> rate;
+	cout << "Times compounded? ";
+	cin >> compound;
+	cout << "Principal? ";
+	cin >> principal;
+	cout << "Interest? ";
+	cin >> interest;
 
-    //Calculation
-    xflour = flour * (x / 48);
-    xbutter = butter * (x / 48);
-    xsugar = sugar * (x / 48);
+	//Calculating
+	decimal = rate / 100;
+	result = principal * pow((1 + decimal / compound), compound);
 
-    //Print out results
-    std::cout << "For " << x << " cookies, you need: \n" << xsugar << " cup(s) of sugar\n" << xbutter << " cup(s) of butter\n" << xflour << " cup(s) of flour";
+	//Printing report
+
+	cout << std::setw(10) << std::left << "\nInterest Rate: ";
+	cout << std::setw(23) << std::right << rate << "%";
+
+	cout << std::setw(10) << std::left << "\nTimes Compounded: ";
+	cout << std::setw(18) << std::right << compound;
+
+	cout << std::setw(10) << std::left << "\nPrincipal: ";
+	cout << std::setw(23) << std::right << "$ " << principal;
+
+	cout << std::setw(10) << std::left << "\nInterest: ";
+	cout << std::setw(24) << std::right << "$ " << interest;
+
+	cout << std::setw(10) << std::left << "\nAmount in Savings: ";
+	cout << std::setw(15) << std::right << "$ " << result;
+	
 }
 
